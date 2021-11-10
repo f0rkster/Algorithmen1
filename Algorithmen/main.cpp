@@ -2,6 +2,7 @@
 
 int main()
 {
-    route(4, 5);
+    route(16, 2);
+    prime(100);
     return 0;
 }
