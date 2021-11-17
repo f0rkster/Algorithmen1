@@ -22,7 +22,6 @@ void pi()
 
 int karazuba(int _x, int _y)
 {
-	return -1;
 	int n = 0;
 	if (_x > _y)
 	{
@@ -33,7 +32,8 @@ int karazuba(int _x, int _y)
 		n = trunc(log10(_y)) + 1;
 	}
 
-    int n0 = log2(n);
+    //int n0 = log2(n);
+    int n0 = 2;
 
     if (n <= n0)
     {
