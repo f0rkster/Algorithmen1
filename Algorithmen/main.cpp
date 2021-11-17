@@ -9,8 +9,8 @@ int main()
     prime(100);
     pi();
     int result = karazuba(1234, 5678); //7006652
-    std::cout << "Karazuba = " << result;
-
+    std::cout << "Karazuba = " << result << std::endl;
+    rectangleMethod(0, 2, 0.5);
 
 
     return 0;
