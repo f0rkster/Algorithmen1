@@ -10,8 +10,9 @@ int main()
     pi();
     int result = karazuba(1234, 5678); //7006652
     std::cout << "Karazuba = " << result << std::endl;
-    rectangleMethod(0, 2, 0.5);
-
+    rectangleMethod(0, 2, 4);
+    trapezoidMethod(0, 2, 4);
+    simpsonMethod(0, 2, 4);
 
     return 0;
 }

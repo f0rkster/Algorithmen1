@@ -63,5 +63,5 @@ int karazuba(int _x, int _y)
 			int result = u * pow(10, 2 * k) + (u + w + v) * pow(10, k) + w;
 			return result;
 		}
-    }
+     }
 }
