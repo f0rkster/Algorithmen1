@@ -2,6 +2,7 @@
 #include "uebung2.h"
 #include "uebung3.h"
 #include "uebung4.h"
+#include "uebung5.h"
 #include <iostream>
 
 int main()
@@ -15,6 +16,9 @@ int main()
     trapezoidMethod(0, 2, 4);
     simpsonMethod(0, 2, 4);
     regression();
+    EulerCauchyMethod(4);
+    RungeKuttaMethod2(4);
+    
 
     return 0;
 }
