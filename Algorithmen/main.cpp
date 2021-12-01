@@ -1,6 +1,7 @@
 #include "uebung1.h"
 #include "uebung2.h"
 #include "uebung3.h"
+#include "uebung4.h"
 #include <iostream>
 
 int main()
@@ -13,6 +14,7 @@ int main()
     rectangleMethod(0, 2, 4);
     trapezoidMethod(0, 2, 4);
     simpsonMethod(0, 2, 4);
+    regression();
 
     return 0;
 }
