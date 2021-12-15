@@ -3,6 +3,7 @@
 #include "uebung3.h"
 #include "uebung4.h"
 #include "uebung5.h"
+#include "uebung6.h"
 #include <iostream>
 
 int main()
@@ -18,6 +19,7 @@ int main()
     regression();
     EulerCauchyMethod(4);
     RungeKuttaMethod2(4);
+    LU_decomposition();
     
 
     return 0;

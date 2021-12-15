@@ -145,6 +145,7 @@
     <ClCompile Include="uebung3.cpp" />
     <ClCompile Include="uebung4.cpp" />
     <ClCompile Include="uebung5.cpp" />
+    <ClCompile Include="uebung6.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="uebung1.h" />
@@ -152,6 +153,7 @@
     <ClInclude Include="uebung3.h" />
     <ClInclude Include="uebung4.h" />
     <ClInclude Include="uebung5.h" />
+    <ClInclude Include="uebung6.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

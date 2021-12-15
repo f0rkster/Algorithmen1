@@ -33,6 +33,9 @@
     <ClCompile Include="uebung5.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="uebung6.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="uebung1.h">
@@ -48,6 +51,9 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="uebung5.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="uebung6.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
