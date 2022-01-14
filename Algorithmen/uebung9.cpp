@@ -2,8 +2,9 @@
 #include <math.h>
 #include <iostream>
 
+
 float func(float _x) {
-	return _x*_x;
+	return 3*_x*_x+2*_x;
 }
 
 float derivation(float _x, float _h) {
@@ -26,35 +27,41 @@ void setDeltaPositiv(float* _delta)
 	}
 }
 
+float round2(float _var){
+	float value = (int)(_var * 100 + .5);
+	return (float) value / 100;
+}
+
 void gradientMethod()
 {
 	std::cout << "GRADIENT" << std::endl;
-	float interval = 0.05;
+	float interval = 0.005;
 	float h = 0.00001;
 	float start = -5;
 	float min = 0;
-	float delta = 0.0001;
+	int count = 1;
 
 	if (derivation(start, h) == 0)
 	{
-		min = h;
+		min = start;
 	}
 	else if (derivation(start, h) < 0)
 	{
-		setDeltaNegativ(&delta);
+		setDeltaPositiv(&interval);
 	}
 	else if (derivation(start, h) > 0)
 	{
-		setDeltaPositiv(&delta);
+		setDeltaNegativ(&interval);
 	}
 
-	while (abs(derivation(start, h)) > 0.000000005)
+	while (abs(derivation(start, h)) > 0.05)
 	{
-		start += delta;
+		count++;
+		start += interval;
 	}
 
 	min = start;
 
-	std::cout << "Minimum = " << min << std::endl;
-
+	std::cout << "Minimum = " << round2(min) << std::endl;
+	std::cout << "It need's " << count << " iterations" << std::endl;
 }
