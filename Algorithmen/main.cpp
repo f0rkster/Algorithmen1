@@ -4,6 +4,7 @@
 #include "uebung4.h"
 #include "uebung5.h"
 #include "uebung6.h"
+#include "uebung7.h"
 #include <iostream>
 
 int main()
@@ -20,7 +21,8 @@ int main()
     EulerCauchyMethod(4);
     RungeKuttaMethod2(4);
     LU_decomposition();
-    
+    jacobi();
+    gaussSeidel();
 
     return 0;
 }
