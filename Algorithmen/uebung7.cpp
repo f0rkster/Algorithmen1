@@ -97,5 +97,5 @@ void gaussSeidel()
 	{
 		std::cout << "x" << i << " = " << x[i] << std::endl;
 	}
-	std::cout << "It need's " << count << " iterations";
+	std::cout << "It need's " << count << " iterations" << std::endl;
 }

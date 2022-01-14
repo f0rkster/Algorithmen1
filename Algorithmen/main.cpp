@@ -5,6 +5,7 @@
 #include "uebung5.h"
 #include "uebung6.h"
 #include "uebung7.h"
+#include "uebung9.h"
 #include <iostream>
 
 int main()
@@ -23,6 +24,7 @@ int main()
     LU_decomposition();
     jacobi();
     gaussSeidel();
+    gradientMethod();
 
     return 0;
 }
