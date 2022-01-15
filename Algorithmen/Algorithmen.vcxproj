@@ -143,6 +143,7 @@
     <ClCompile Include="uebung1.cpp" />
     <ClCompile Include="uebung10.cpp" />
     <ClCompile Include="uebung11.cpp" />
+    <ClCompile Include="uebung12.cpp" />
     <ClCompile Include="uebung2.cpp" />
     <ClCompile Include="uebung3.cpp" />
     <ClCompile Include="uebung4.cpp" />
@@ -155,6 +156,7 @@
     <ClInclude Include="uebung1.h" />
     <ClInclude Include="uebung10.h" />
     <ClInclude Include="uebung11.h" />
+    <ClInclude Include="uebung12.h" />
     <ClInclude Include="uebung2.h" />
     <ClInclude Include="uebung3.h" />
     <ClInclude Include="uebung4.h" />

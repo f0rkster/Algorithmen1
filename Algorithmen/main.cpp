@@ -8,6 +8,7 @@
 #include "uebung9.h"
 #include "uebung10.h"
 #include "uebung11.h"
+#include "uebung12.h"
 #include <iostream>
 
 int main()
@@ -29,6 +30,7 @@ int main()
     gradientMethod();
     simmulatedAnealing();
     prim();
+    broyerMooreHorspool();
 
     return 0;
 }
