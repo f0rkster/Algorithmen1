@@ -6,6 +6,7 @@
 #include "uebung6.h"
 #include "uebung7.h"
 #include "uebung9.h"
+#include "uebung10.h"
 #include <iostream>
 
 int main()
@@ -25,6 +26,7 @@ int main()
     jacobi();
     gaussSeidel();
     gradientMethod();
+    kruskal();
 
     return 0;
 }
