@@ -7,6 +7,7 @@
 #include "uebung7.h"
 #include "uebung9.h"
 #include "uebung10.h"
+#include "uebung11.h"
 #include <iostream>
 
 int main()
@@ -26,7 +27,8 @@ int main()
     jacobi();
     gaussSeidel();
     gradientMethod();
-    kruskal();
+    simmulatedAnealing();
+    prim();
 
     return 0;
 }

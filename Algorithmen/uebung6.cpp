@@ -5,75 +5,110 @@ void LU_decomposition()
 {
     std::cout << "LU decompistion:" << std::endl;
     const int n = 4;
-    float input[n][n] = {
+    float A[n][n] = {
                                 {-1, 1,-1, 1},
                                 { 1, 0,-1, 1},
                                 { 2, 2, 1,-1},
                                 {-2,-1, 1, 1}
-                              };
+    };
 
     float R[n][n] = {
                                 { 0, 0, 0, 0},
                                 { 0, 0, 0, 0},
                                 { 0, 0, 0, 0},
                                 { 0, 0, 0, 0}
-                              };
+    };
 
     float L[n][n] = {
                                 { 1, 0, 0, 0},
                                 { 0, 1, 0, 0},
                                 { 0, 0, 1, 0},
                                 { 0, 0, 0, 1}
-                              };
+    };
 
-    float resultArray[n] = { 1, 2, 3, 4 };
+    float b[n] = { 1, 2, 3, 4 };
 
-    float yArray[n];
+    float x[n] = { 0 };
+    float y[n] = { 0 };
 
-    for (int i = 0; i < n; i++)
+    memcpy(R, A, sizeof(A));
+
+    for (int round = 0; round < n; round++)
     {
-        R[0][i] = input[0][i];
-    }
-
-    for (int i = 1; i < n; i++)
-    {
-        for (int k = 0; k < n; k++)
+        for (int row = round + 1; row < n; row++)
         {
-            R[i][k] = input[i][k] - (input[i][0] * input[0][k]) / input[0][0];
+            L[row][round] = R[row][round] / R[round][round];
+            for (int col = 0; col < n; col++)
+            {
+                R[row][col] = R[row][col] - L[row][round] * R[round][col];
+            }
         }
     }
 
-    float tempR[n][n];
-    memcpy(tempR, R, sizeof(R));
-    for (int i = 2; i < n; i++)
-    {
-        for (int k = 1; k < n; k++)
-        {
-            R[i][k] = tempR[i][k] - (tempR[i][1] * tempR[1][k]) / tempR[1][1];
-        }
-    }
-
-    memcpy(tempR, R, sizeof(R));
-    for (int i = 3; i < n; i++)
-    {
-        for (int k = 2; k < n; k++)
-        {
-            R[i][k] = tempR[i][k] - (tempR[i][2] * tempR[2][k]) / tempR[2][2];
-        }
-    }
-
-
-
-
-
-
-
-    for (int i = 0; i < n; i++)
-    {
-        for (int k = 0; k < n; k++)
-        {
-            std::cout << R[i][k] << " ";
+    // Render Solution L Matrix 
+    std::cout << "L Decomposition is as follows..." << std::endl;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            std::cout << L[i][j] << " ";
         }
         std::cout << std::endl;
     }
+
+    std::cout << std::endl;
+
+
+    // Render Solution R Matrix
+    std::cout << "R Decomposition is as follows..." << std::endl;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            std::cout << R[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+
+    // forward substitution
+    for (int i = 0; i < n; i++)
+    {
+        float sum = 0;
+
+        for (int j = 0; j < i; j++)
+        {
+            sum += L[i][j] * y[j];
+        }
+
+        y[i] = (1 / L[i][i]) * (b[i] - sum);
+    }
+
+    // render forward substitution
+    std::cout << "forward substitution" << std::endl;
+    std::cout << "y = [";
+    for (int i = 0; i < n; i++)
+    {
+        std::cout << y[i] << ", ";
+    }
+    std::cout << "]" << std::endl;
+
+    // reverse substitution
+    for (int i = n - 1; i >= 0; i--)
+    {
+        float sum = 0;
+
+        for (int j = i; j < n; j++)
+        {
+            sum += R[i][j] * x[j];
+        }
+
+        x[i] = (1 / R[i][i]) * (y[i] - sum);
+    }
+
+    // render reverse substitution
+    std::cout << "reverse substitution" << std::endl;
+    std::cout << "x = [";
+    for (int i = 0; i < n; i++)
+    {
+        std::cout << x[i] << ", ";
+    }
+    std::cout << "]" << std::endl;
+
+
 }
